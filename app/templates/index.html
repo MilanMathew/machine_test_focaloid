@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h4>Welcome to StatsPL!</h4>
+    
+    <form method="POST" action="/stats" id="season_form">
+        Choose the season to get the stats
+        <select onchange="submit()" name="selected_season">
+            {% for value in data.seasons %}
+                <option value="{{value}}" {% if value== data.selected_season %} selected {% endif %}>{{value}}</option>
+            {% endfor %}
+        </select>
+    </form>
+    <h4>1. Top four teams in terms of wins</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Wins</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in data.top_four_teams_on_wins %}
+            <tr>
+                <td>{{ data.top_four_teams_on_wins.index(team) + 1 }}</td>
+                <td>{{ team[0] }}</td>
+                <td style="text-align: center;">{{ team[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h4>2. Team that won the most no.of tosses</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Toss Wins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ data.team_with_max_toss_wins[0] }}</td>
+                <td style="text-align: center;">{{ data.team_with_max_toss_wins[1] }}</td>
+            </tr>
+        </tbody>  
+    </table>
+    <h4>3. Player with the most no.of 'Player of the Match' awards</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Wins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ data.player_with_max_pom_wins[0] }}</td>
+                <td style="text-align: center;">{{ data.player_with_max_pom_wins[1] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>4. Team with the most wins</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Wins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ data.team_with_max_wins[0] }}</td>
+                <td style="text-align: center;">{{ data.team_with_max_wins[1] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>5. Venue with the most wins for the top team</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Venue</th>
+                <th>Wins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ data.top_team_max_wins_venue[0] }}</td>
+                <td style="text-align: center;">{{ data.top_team_max_wins_venue[1] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>6. Percentage of teams who won the toss and decided to bat first</h4>
+    {{ data.win_toss_bat_first_percent }}%
+    <h4>7. Venue that hosted the most no.of matches</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Venue</th>
+                <th>Matches</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ data.host_venue_max_matches[0] }}</td>
+                <td style="text-align: center;">{{ data.host_venue_max_matches[1] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>8. Team with the highest win margin in terms of runs</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Runs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ data.team_victory_max_runs[0] }}</td>
+                <td style="text-align: center;">{{ data.team_victory_max_runs[1] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>9. Team with the highest win margin in terms of wickets (Optional)</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Wickets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ data.team_victory_max_wickets[0] }}</td>
+                <td style="text-align: center;">{{ data.team_victory_max_wickets[1] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>10. No.of times a team won the toss and the match (Optional)</h4>
+    {{ data.win_toss_and_match_count }}
+
+{% endblock %}

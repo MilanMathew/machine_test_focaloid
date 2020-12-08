@@ -1,0 +1,29 @@
+<html>
+    <head>
+      {% if title %}
+      <title>StatsPL - {{ title }}</title>
+      {% else %}
+      <title>StatsPL - IPL Stats Dashboard</title>
+      {% endif %}
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <style>
+        body {
+          padding: 20px;
+        }
+        h4 {
+          margin-top: 25px;
+        }
+        .table {
+          width: 70%;
+        }
+      </style>
+      <script>
+        function submit() {
+          document.getElementById('season_form').submit();
+        }
+      </script>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>

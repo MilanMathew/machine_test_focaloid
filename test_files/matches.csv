@@ -1,0 +1,14 @@
+id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winner,win_by_runs,win_by_wickets,player_of_match,venue,umpire1,umpire2
+1,2012,Mumbai,2012-04-11,Mumbai Indians,Rajasthan Royals,Rajasthan Royals,field,normal,0,Mumbai Indians,27,0,KA Pollard,Wankhede Stadium,Aleem Dar,BNJ Oxenford
+2,2012,Chennai,2012-04-28,Kings XI Punjab,Chennai Super Kings,Kings XI Punjab,bat,normal,0,Kings XI Punjab,7,0,Mandeep Singh,"MA Chidambaram Stadium, Chepauk",BF Bowden,SK Tarapore
+3,2012,Chennai,2012-04-30,Chennai Super Kings,Kolkata Knight Riders,Chennai Super Kings,bat,normal,0,Kolkata Knight Riders,0,5,G Gambhir,"MA Chidambaram Stadium, Chepauk",BF Bowden,C Shamshuddin
+4,2012,Mumbai,2012-05-06,Chennai Super Kings,Mumbai Indians,Mumbai Indians,field,normal,0,Mumbai Indians,0,2,DR Smith,Wankhede Stadium,Asad Rauf,S Asnani
+5,2012,Bangalore,2012-05-06,Deccan Chargers,Royal Challengers Bangalore,Royal Challengers Bangalore,field,normal,0,Royal Challengers Bangalore,0,5,AB de Villiers,M Chinnaswamy Stadium,HDPK Dharmasena,BNJ Oxenford
+6,2012,Delhi,2012-05-07,Delhi Daredevils,Kolkata Knight Riders,Delhi Daredevils,bat,normal,0,Kolkata Knight Riders,0,6,JH Kallis,Feroz Shah Kotla,JD Cloete,S Ravi
+7,2012,Pune,2012-05-08,Pune Warriors,Rajasthan Royals,Pune Warriors,bat,normal,0,Rajasthan Royals,0,7,SR Watson,Subrata Roy Sahara Stadium,Asad Rauf,BR Doctrove
+8,2012,Delhi,2012-05-15,Kings XI Punjab,Delhi Daredevils,Kings XI Punjab,bat,normal,0,Delhi Daredevils,0,5,UT Yadav,Feroz Shah Kotla,HDPK Dharmasena,BNJ Oxenford
+9,2012,Mumbai,2012-05-16,Kolkata Knight Riders,Mumbai Indians,Mumbai Indians,field,normal,0,Kolkata Knight Riders,32,0,SP Narine,Wankhede Stadium,S Das,BR Doctrove
+10,2012,Delhi,2012-05-17,Royal Challengers Bangalore,Delhi Daredevils,Delhi Daredevils,field,normal,0,Royal Challengers Bangalore,21,0,CH Gayle,Feroz Shah Kotla,HDPK Dharmasena,C Shamshuddin
+11,2012,Chennai,2012-05-25,Chennai Super Kings,Delhi Daredevils,Delhi Daredevils,field,normal,0,Chennai Super Kings,86,0,M Vijay,"MA Chidambaram Stadium, Chepauk",BR Doctrove,SJA Taufel
+12,2012,Chennai,2012-05-27,Chennai Super Kings,Kolkata Knight Riders,Chennai Super Kings,bat,normal,0,Kolkata Knight Riders,0,5,MS Bisla,"MA Chidambaram Stadium, Chepauk",BF Bowden,SJA Taufel
+13,2012,Jaipur,2012-05-20,Rajasthan Royals,Mumbai Indians,Rajasthan Royals,bat,normal,0,Mumbai Indians,0,10,DR Smith,Sawai Mansingh Stadium,HDPK Dharmasena,C Shamshuddin

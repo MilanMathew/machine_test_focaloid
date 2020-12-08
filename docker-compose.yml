@@ -1,0 +1,66 @@
+version: "3.7"
+### Dependencies.
+services:
+    db:
+        image: postgres:12.5
+        restart: always
+        ports:
+          - "5432:5432"
+        environment:
+            POSTGRES_DB: fc
+            POSTGRES_USER: fc
+            POSTGRES_PASSWORD: fc123
+            PGDATA: /data/db
+        volumes:
+            - ./storage/db:/data/db
+        networks:
+            app_network:
+                aliases:
+                    - db.devs
+
+    db_admin_ui:
+        image: dockage/phppgadmin:latest
+        restart: always
+        ports:
+            - "5010:80"
+        links:
+            - db
+        environment:
+            PHP_PG_ADMIN_SERVER_DESC: "DB Admin"
+            PHP_PG_ADMIN_SERVER_HOST: db.devs
+            PHP_PG_ADMIN_SERVER_PORT: 5432
+            PHP_PG_ADMIN_SERVER_DEFAULT_DB: fc
+        networks:
+            app_network:
+                aliases:
+                    - dbadmin.devs
+        depends_on:
+            - db
+
+    app_api:
+        container_name: focaloid
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: on-failure:100000
+        environment:
+          - ENV=production
+          - DATABASE_URL=postgresql://fc:fc123@db.devs:5432/fc
+          - PORT=5000
+        links:
+            - db
+        volumes:
+            - .:/code:cached
+        networks:
+            app_network:
+                aliases:
+                    - app.devs
+        ports:
+            - "5000:5000"
+        command: uwsgi --ini uwsgi.ini
+        depends_on:
+            - db
+
+networks:
+  app_network:
+    driver: bridge
